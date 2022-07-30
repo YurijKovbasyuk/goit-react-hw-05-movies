@@ -70,11 +70,10 @@ const MovieDetails = () => {
             marginRight: '10px',
             textDecoration: 'none',
           }}
-          to={'/movies/' + params.movieId + '/cast'}
-          // {{
-          //   pathname: '/movies/' + params.movieId + '/cast',
-          //   state: { from: location.state?.from || '/' },
-          // }}
+          to={{
+            pathname: '/movies/' + params.movieId + '/cast',
+            state: { from: location.state?.from || '/' },
+          }}
         >
           Cast
         </Link>
@@ -83,11 +82,10 @@ const MovieDetails = () => {
             marginRight: '10px',
             textDecoration: 'none',
           }}
-          to={'/movies/' + params.movieId + '/reviews'}
-          // {{
-          //   pathname: '/movies/' + params.movieId + '/reviews',
-          //   state: { from: location.state?.from || '/' },
-          // }}
+          to={{
+            pathname: '/movies/' + params.movieId + '/reviews',
+            state: { from: location.state?.from || '/' },
+          }}
         >
           Reviews
         </Link>

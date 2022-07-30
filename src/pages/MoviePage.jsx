@@ -1,7 +1,7 @@
 import qs from 'query-string';
 import { useEffect, useState } from 'react';
 
-import { useNavigate, useLocation, Outlet } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 import { getMoviesListBySearchAPI } from '../API/API';
 import MovieList from '../components/MovieList/MovieList';
@@ -38,10 +38,7 @@ const MoviesPage = () => {
         <input onChange={handleChange} type="text" value={input} />
         <button type="submit">Search</button>
       </form>
-      {movieList.length > 0 && (
-        // <Outlet />
-        <MovieList movieList={movieList} />
-      )}
+      {movieList.length > 0 && <MovieList movieList={movieList} />}
     </>
   );
 };

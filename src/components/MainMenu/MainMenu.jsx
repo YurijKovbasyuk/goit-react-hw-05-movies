@@ -1,4 +1,4 @@
-import { NavLink } from 'react-router-dom';
+import { NavLink, Outlet } from 'react-router-dom';
 
 const navStyles = {
   padding: '10px 30px ',
@@ -9,33 +9,37 @@ const navStyles = {
 
 const MainMenu = () => {
   return (
-    <nav style={navStyles}>
-      <NavLink
-        activeStyle={{ color: 'red' }}
-        to="/"
-        exact
-        style={{
-          fontSize: '36px',
-          color: 'black',
-          marginRight: '10px',
-          textDecoration: 'none',
-        }}
-      >
-        Home
-      </NavLink>
-      <NavLink
-        activeStyle={{ color: 'red' }}
-        to="/movies"
-        style={{
-          fontSize: '36px',
-          color: 'black',
-          marginRight: '10px',
-          textDecoration: 'none',
-        }}
-      >
-        Movies
-      </NavLink>
-    </nav>
+    <>
+      <nav style={navStyles}>
+        <NavLink
+          active={{ color: 'red' }}
+          to="/"
+          style={{
+            fontSize: '36px',
+            color: 'black',
+            marginRight: '10px',
+            textDecoration: 'none',
+          }}
+        >
+          Home
+        </NavLink>
+        <NavLink
+          active={{ color: 'red' }}
+          to="/movies"
+          style={{
+            fontSize: '36px',
+            color: 'black',
+            marginRight: '10px',
+            textDecoration: 'none',
+          }}
+        >
+          Movies
+        </NavLink>
+      </nav>{' '}
+      <main>
+        <Outlet />
+      </main>
+    </>
   );
 };
 

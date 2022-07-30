@@ -1,8 +1,8 @@
-import './index.module.css';
-import { Route, Routes, NavLink } from 'react-router-dom';
+import { Navigate, Route, Routes } from 'react-router-dom';
 import HomePage from '../pages/HomePage';
-import MoviesPage from '../pages/MoviePage';
 import MovieDetailsPage from '../pages/MovieDetailPage';
+import MoviesPage from '../pages/MoviePage';
+import './index.module.css';
 import MainMenu from './MainMenu/MainMenu';
 // import { Suspense } from 'react';
 import Cast from './Cast/Cast';
@@ -11,34 +11,17 @@ import Reviews from './Reviews/Reviews';
 function App() {
   return (
     <div className="App">
-      <MainMenu />
-      {/* <Suspense fallback={<h1>Loading...</h1>}> */}
-      {/* <nav>
-        <NavLink to="/">Home</NavLink>
-        <NavLink to="/movies">Movies</NavLink>
-      </nav> */}
       <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="movie" element={<MoviesPage />}>
-          <Route path="movie/:movieId" element={<MovieDetailsPage />}>
+        <Route path="/" element={<MainMenu />}>
+          <Route index element={<HomePage />} />
+          <Route path="movies" element={<MoviesPage />} />
+          <Route path="movies/:movieId" element={<MovieDetailsPage />}>
             <Route path="cast" element={<Cast />} />
             <Route path="reviews" element={<Reviews />} />
           </Route>
+          <Route path="*" element={<Navigate to="/" />} />
         </Route>
-        {/* <Route path="*" element={<HomePage />} /> */}
       </Routes>
-      {/* </Suspense> */}
-
-      {/* <Routes>
-            <Route path="/" element={<Layout />}>
-                <Route index element={<HomePage />} />
-                <Route path="movies" element={<MoviesPage />} />
-                <Route path="movies/:movieId" element={<MovieDetailsPage />}>
-                    <Route path="cast" element={<Cast />} />
-                    <Route path="reviews" element={<Reviews />} />
-                </Route>
-                <Route path="*" element={<Navigate to="/" />} />
-            </Route> */}
     </div>
   );
 }
