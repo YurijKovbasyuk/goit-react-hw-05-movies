@@ -89,8 +89,8 @@ const MovieDetails = () => {
         >
           Reviews
         </Link>
-        <Outlet />
       </div>
+      <Outlet />
     </>
   );
 };

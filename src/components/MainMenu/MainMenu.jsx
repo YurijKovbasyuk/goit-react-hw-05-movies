@@ -35,7 +35,7 @@ const MainMenu = () => {
         >
           Movies
         </NavLink>
-      </nav>{' '}
+      </nav>
       <main>
         <Outlet />
       </main>

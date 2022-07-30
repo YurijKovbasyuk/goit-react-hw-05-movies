@@ -9,7 +9,7 @@ const BtnGoBack = () => {
     navigate(locationFrom);
   };
 
-  return <button onClick={goBack}>&#50dcf5e1; Go back</button>;
+  return <button onClick={goBack}> Go back</button>;
 };
 
 export default BtnGoBack;

@@ -1,12 +1,14 @@
 import { useEffect, useState } from 'react';
 import { getReviewsByIdAPI } from '../../API/API';
+import { useParams } from 'react-router-dom';
 
 const Reviews = ({ id }) => {
   const [reviews, setReviews] = useState([]);
   const [err, setErr] = useState(null);
+  const { movieId } = useParams();
 
   useEffect(() => {
-    getReviewsByIdAPI(id)
+    getReviewsByIdAPI(movieId)
       .then(data => {
         if (data.length === 0) {
           throw new Error('Data is empty');
@@ -17,7 +19,7 @@ const Reviews = ({ id }) => {
         console.log(err);
         setErr(err);
       });
-  }, [id]);
+  }, [movieId]);
 
   return (
     <>

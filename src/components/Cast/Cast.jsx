@@ -1,17 +1,20 @@
 import { useEffect, useState } from 'react';
 import { getCastsByIdAPI } from '../../API/API';
+import { useParams } from 'react-router-dom';
 
 const Cast = ({ id }) => {
   const [casts, setCasts] = useState([]);
   const imgUrl = 'https://image.tmdb.org/t/p/w400';
+  const { movieId } = useParams();
 
   useEffect(() => {
-    getCastsByIdAPI(id)
+    getCastsByIdAPI(movieId)
       .then(data => {
         setCasts(data);
+        console.log(data);
       })
       .catch(err => console.log(err));
-  }, [id]);
+  }, [movieId]);
 
   return (
     <>
