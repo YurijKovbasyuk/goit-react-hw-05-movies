@@ -28,6 +28,17 @@ function App() {
         {/* <Route path="*" element={<HomePage />} /> */}
       </Routes>
       {/* </Suspense> */}
+
+      {/* <Routes>
+            <Route path="/" element={<Layout />}>
+                <Route index element={<HomePage />} />
+                <Route path="movies" element={<MoviesPage />} />
+                <Route path="movies/:movieId" element={<MovieDetailsPage />}>
+                    <Route path="cast" element={<Cast />} />
+                    <Route path="reviews" element={<Reviews />} />
+                </Route>
+                <Route path="*" element={<Navigate to="/" />} />
+            </Route> */}
     </div>
   );
 }
