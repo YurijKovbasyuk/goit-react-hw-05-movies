@@ -1,8 +1,6 @@
 import qs from 'query-string';
 import { useEffect, useState } from 'react';
-
 import { useNavigate, useLocation } from 'react-router-dom';
-
 import { getMoviesListBySearchAPI } from '../API/API';
 import MovieList from '../components/MovieList/MovieList';
 

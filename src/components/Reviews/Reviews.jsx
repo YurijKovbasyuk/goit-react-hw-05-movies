@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { getReviewsByIdAPI } from '../../API/API';
 import { useParams } from 'react-router-dom';
 
-const Reviews = ({ id }) => {
+const Reviews = () => {
   const [reviews, setReviews] = useState([]);
   const [err, setErr] = useState(null);
   const { movieId } = useParams();

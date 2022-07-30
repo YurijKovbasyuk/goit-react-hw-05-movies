@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { getCastsByIdAPI } from '../../API/API';
 import { useParams } from 'react-router-dom';
 
-const Cast = ({ id }) => {
+const Cast = () => {
   const [casts, setCasts] = useState([]);
   const imgUrl = 'https://image.tmdb.org/t/p/w400';
   const { movieId } = useParams();
@@ -20,15 +20,17 @@ const Cast = ({ id }) => {
     <>
       <ul>
         {casts?.map(author => {
+          console.log(author);
+          const { id, original_name, character, profile_path } = author;
           return (
-            <li key={author.id}>
+            <li key={id}>
               <img
-                src={author.profile_path && imgUrl + author.profile_path}
+                src={profile_path && imgUrl + profile_path}
                 alt=""
                 width="150px"
               />
-              <p>{author.original_name}</p>
-              <p>Character: {author.character}</p>
+              <p>{original_name}</p>
+              <p>Character: {character}</p>
             </li>
           );
         })}

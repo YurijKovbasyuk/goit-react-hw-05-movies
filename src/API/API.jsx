@@ -7,13 +7,6 @@ defaults.params = {
   api_key: API_KEY,
 };
 
-// export const getTrendingMovies = async () => {
-//   const { data } = await axios.get(`trending/movie/day`);
-
-//   console.log(data);
-//   return data;
-// };
-
 export const getTrendingTodayAPI = () => {
   defaults.params = {
     api_key: API_KEY,
@@ -36,7 +29,6 @@ export const getOneMovieByIdAPI = id => {
   return axios.get('movie/' + id).then(res => res.data);
 };
 
-//
 //https:api.themoviedb.org/3/search/movie?
 //api_key =<< api_key >>& language=en - US & page=1 & include_adult=false
 export const getMoviesListBySearchAPI = query => {
@@ -69,4 +61,3 @@ export const getCastsByIdAPI = id => {
   };
   return axios.get('movie/' + id + '/credits').then(res => res.data.cast);
 };
-// getCastsByIdAPI('646385').then(console.log)

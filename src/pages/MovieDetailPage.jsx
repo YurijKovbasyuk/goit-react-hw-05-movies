@@ -1,9 +1,6 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from 'react';
 import { Link, useLocation, useParams, Outlet } from 'react-router-dom';
 import BtnGoBack from '../components/BtnGoBack/BtnGoBack';
-// import Cast from '../components/Cast/Cast';
-// import Reviews from '../components/Reviews/Reviews';
 import { getOneMovieByIdAPI } from '../API/API';
 
 const MovieDetails = () => {
@@ -14,7 +11,7 @@ const MovieDetails = () => {
 
   useEffect(() => {
     getOneMovieByIdAPI(params.movieId).then(setMovie);
-  }, []);
+  }, [params.movieId]);
 
   const oneMovie = {
     padding: '10px 30px ',
