@@ -6,12 +6,12 @@ import { getOneMovieByIdAPI } from '../API/API';
 const MovieDetails = () => {
   const location = useLocation();
   const [movie, setMovie] = useState({});
-  const params = useParams();
+  const { movieId } = useParams();
   const imgUrl = 'https://image.tmdb.org/t/p/w400';
 
   useEffect(() => {
-    getOneMovieByIdAPI(params.movieId).then(setMovie);
-  }, [params.movieId]);
+    getOneMovieByIdAPI(movieId).then(setMovie);
+  }, [movieId]);
 
   const oneMovie = {
     padding: '10px 30px ',
@@ -65,7 +65,7 @@ const MovieDetails = () => {
             textDecoration: 'none',
           }}
           to={{
-            pathname: '/movies/' + params.movieId + '/cast',
+            pathname: `/movies/${movieId}/cast`,
             state: { from: location?.state?.from || '/' },
           }}
         >
@@ -77,7 +77,7 @@ const MovieDetails = () => {
             textDecoration: 'none',
           }}
           to={{
-            pathname: '/movies/' + params.movieId + '/reviews',
+            pathname: `/movies/${movieId}/reviews`,
             state: { from: location?.state?.from || '/' },
           }}
         >

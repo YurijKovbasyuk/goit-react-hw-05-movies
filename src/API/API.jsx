@@ -11,22 +11,17 @@ export const getTrendingTodayAPI = () => {
   defaults.params = {
     api_key: API_KEY,
   };
-  return axios
-    .get('trending/movie/day')
-    .then(res => res.data.results)
-    .catch(err => {
-      throw err;
-    });
+  return axios.get('trending/movie/day').then(res => res.data.results);
 };
 
 // https://api.themoviedb.org/3/movie/{movie_id}?api_key=<<api_key>>&language=en-US
-export const getOneMovieByIdAPI = id => {
+export const getOneMovieByIdAPI = movieId => {
   defaults.params = {
     api_key: API_KEY,
     language: 'en-US',
   };
 
-  return axios.get('movie/' + id).then(res => res.data);
+  return axios.get('movie/' + movieId).then(res => res.data);
 };
 
 //https:api.themoviedb.org/3/search/movie?
@@ -45,19 +40,19 @@ export const getMoviesListBySearchAPI = query => {
 };
 
 // https://api.themoviedb.org/3/movie/{movie_id}/reviews?api_key=<<api_key>>&language=en-US&page=1
-export const getReviewsByIdAPI = id => {
+export const getReviewsByIdAPI = movieId => {
   defaults.params = {
     api_key: API_KEY,
     language: 'en-US',
     page: 1,
   };
-  return axios.get('movie/' + id + '/reviews').then(res => res.data.results);
+  return axios.get(`movie/${movieId}/reviews`).then(res => res.data.results);
 };
 
-export const getCastsByIdAPI = id => {
+export const getCastsByIdAPI = movieId => {
   defaults.params = {
     api_key: API_KEY,
     language: 'en-US',
   };
-  return axios.get('movie/' + id + '/credits').then(res => res.data.cast);
+  return axios.get(`movie/${movieId}/credits`).then(res => res.data.cast);
 };

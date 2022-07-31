@@ -6,9 +6,13 @@ const HomePage = () => {
   const [movieList, setMovieList] = useState([]);
 
   useEffect(() => {
-    getTrendingTodayAPI().then(data => {
-      setMovieList(data);
-    });
+    getTrendingTodayAPI()
+      .then(data => {
+        setMovieList(data);
+      })
+      .catch(err => {
+        throw err;
+      });
   }, []);
 
   return (

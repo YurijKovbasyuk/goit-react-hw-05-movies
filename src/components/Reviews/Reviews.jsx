@@ -16,7 +16,6 @@ const Reviews = () => {
         setReviews(data);
       })
       .catch(err => {
-        console.log(err);
         setErr(err);
       });
   }, [movieId]);
@@ -28,10 +27,11 @@ const Reviews = () => {
       ) : (
         <ul>
           {reviews.map(review => {
+            const { content, author, id } = review;
             return (
-              <li key={review.id}>
-                <h3>Author: {review.author}</h3>
-                <p>{review.content}</p>
+              <li key={id}>
+                <h3>Author: {author}</h3>
+                <p>{content}</p>
               </li>
             );
           })}
