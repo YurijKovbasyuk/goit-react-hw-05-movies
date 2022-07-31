@@ -26,25 +26,22 @@ const MovieDetails = () => {
     flexDirection: 'column',
     alignItems: 'start',
   };
-
+  const { poster_path, title, vote_averag, overview, genres } = movie;
   return (
     <>
       <BtnGoBack />
       <div style={oneMovie}>
-        <img
-          src={movie.poster_path && imgUrl + movie.poster_path}
-          alt=""
-          width="20%"
-        />
+        <img src={poster_path && imgUrl + poster_path} alt="" width="20%" />
         <div style={textOfMovie}>
-          <h2>{movie.title}</h2>
-          <p>User Score {movie.vote_averag}</p>
+          <h2>{title}</h2>
+          <p>User Score {vote_averag}</p>
           <h3>Overvies</h3>
-          <p>{movie.overview}</p>
+          <p>{overview}</p>
           <h3>Genres</h3>
           <ul>
-            {movie.genres?.map(genre => {
-              return <li key={genre.id}>{genre.name}</li>;
+            {genres?.map(genre => {
+              const { id, name } = genre;
+              return <li key={id}>{name}</li>;
             })}
           </ul>
         </div>
@@ -69,7 +66,7 @@ const MovieDetails = () => {
           }}
           to={{
             pathname: '/movies/' + params.movieId + '/cast',
-            state: { from: location.state?.from || '/' },
+            state: { from: location?.state?.from || '/' },
           }}
         >
           Cast
@@ -81,7 +78,7 @@ const MovieDetails = () => {
           }}
           to={{
             pathname: '/movies/' + params.movieId + '/reviews',
-            state: { from: location.state?.from || '/' },
+            state: { from: location?.state?.from || '/' },
           }}
         >
           Reviews

@@ -11,7 +11,6 @@ const Cast = () => {
     getCastsByIdAPI(movieId)
       .then(data => {
         setCasts(data);
-        console.log(data);
       })
       .catch(err => console.log(err));
   }, [movieId]);
@@ -20,7 +19,6 @@ const Cast = () => {
     <>
       <ul>
         {casts?.map(author => {
-          console.log(author);
           const { id, original_name, character, profile_path } = author;
           return (
             <li key={id}>

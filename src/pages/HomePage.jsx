@@ -8,7 +8,6 @@ const HomePage = () => {
   useEffect(() => {
     getTrendingTodayAPI().then(data => {
       setMovieList(data);
-      console.log(data);
     });
   }, []);
 
