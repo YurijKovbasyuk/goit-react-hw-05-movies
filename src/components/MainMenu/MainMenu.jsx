@@ -12,7 +12,7 @@ const MainMenu = () => {
     <>
       <nav style={navStyles}>
         <NavLink
-          active={{ color: 'red' }}
+          // styleActive="color: red"
           to="/"
           style={{
             fontSize: '36px',
@@ -24,7 +24,7 @@ const MainMenu = () => {
           Home
         </NavLink>
         <NavLink
-          active={{ color: 'red' }}
+          // activeStyle=" color: red "
           to="/movies"
           style={{
             fontSize: '36px',
