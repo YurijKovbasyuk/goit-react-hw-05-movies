@@ -1,38 +1,16 @@
 import { NavLink, Outlet } from 'react-router-dom';
+import css from './style.module.css';
 
-const navStyles = {
-  padding: '10px 30px ',
-  display: 'flex',
-  justifyContent: 'start',
-  boxShadow: '0 0 10px rgba(0,0,0,0.22)',
-};
+const { nav, styleLink } = css;
 
 const MainMenu = () => {
   return (
     <>
-      <nav style={navStyles}>
-        <NavLink
-          // styleActive="color: red"
-          to="/"
-          style={{
-            fontSize: '36px',
-            color: 'black',
-            marginRight: '10px',
-            textDecoration: 'none',
-          }}
-        >
+      <nav className={nav}>
+        <NavLink className={styleLink} to="/">
           Home
         </NavLink>
-        <NavLink
-          // activeStyle=" color: red "
-          to="/movies"
-          style={{
-            fontSize: '36px',
-            color: 'black',
-            marginRight: '10px',
-            textDecoration: 'none',
-          }}
-        >
+        <NavLink className={styleLink} to="/movies">
           Movies
         </NavLink>
       </nav>

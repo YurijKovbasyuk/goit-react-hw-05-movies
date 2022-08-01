@@ -32,7 +32,12 @@ const MoviesPage = () => {
 
   return (
     <>
-      <form onSubmit={handleSubmit}>
+      <form
+        onSubmit={handleSubmit}
+        style={{
+          paddingBottom: '22px',
+        }}
+      >
         <input onChange={handleChange} type="text" value={input} />
         <button type="submit">Search</button>
       </form>
