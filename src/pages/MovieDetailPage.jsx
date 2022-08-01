@@ -64,10 +64,8 @@ const MovieDetails = () => {
             marginRight: '10px',
             textDecoration: 'none',
           }}
-          to={{
-            pathname: `/movies/${movieId}/cast`,
-            state: { from: location?.state?.from || '/' },
-          }}
+          to={`/movies/${movieId}/cast`}
+          state={{ from: location.state?.from ?? '/' }}
         >
           Cast
         </Link>
@@ -76,10 +74,8 @@ const MovieDetails = () => {
             marginRight: '10px',
             textDecoration: 'none',
           }}
-          to={{
-            pathname: `/movies/${movieId}/reviews`,
-            state: { from: location?.state?.from || '/' },
-          }}
+          to={`/movies/${movieId}/reviews`}
+          state={{ from: location.state?.from ?? '/' }}
         >
           Reviews
         </Link>

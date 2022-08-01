@@ -1,11 +1,11 @@
 import { useLocation, useNavigate } from 'react-router-dom';
 
-const BtnGoBack = ref => {
+const BtnGoBack = () => {
   const location = useLocation();
   const navigate = useNavigate();
 
   const locationFrom = location.state?.from ?? '/';
-  console.log(ref);
+  // console.log();
 
   const goBack = () => {
     // console.log(backBtn);
