@@ -1,12 +1,12 @@
 import { NavLink, Outlet } from 'react-router-dom';
 import css from './style.module.css';
 
-const { nav, styleLink } = css;
+const { navigateBar, styleLink } = css;
 
 const MainMenu = () => {
   return (
     <>
-      <nav className={nav}>
+      <nav className={navigateBar}>
         <NavLink className={styleLink} to="/">
           Home
         </NavLink>
