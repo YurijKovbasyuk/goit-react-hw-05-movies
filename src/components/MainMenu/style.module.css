@@ -1,10 +1,12 @@
 .nav {
+  background-color: rgb(97, 97, 97);
   padding: 10px 30px;
   display: flex;
   justify-content: start;
   box-shadow: 2px 2px 10px #70ec7038;
 }
 .styleLink {
+  padding: 5px;
   font-size: 36px;
   color: black;
   margin-right: 10px;

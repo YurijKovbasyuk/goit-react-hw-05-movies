@@ -141,4 +141,8 @@ code {
 }
 .active {
   font-weight: bold;
+  background-color: rgb(219, 219, 219);
+  border-radius: 10px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
 }
